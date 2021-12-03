@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import TablaDispositivos from "./tablaDispositivos";
 
 function GaleriaCuartos (props) {
-    let [espacioSelec] = useState(props.espacioSelecionado);
     let [cuartos, setCuartos] = useState([]);
     let [cuartoSelec, setCuartoSelec] = useState();
     useEffect(() => {
@@ -10,13 +9,13 @@ function GaleriaCuartos (props) {
         fetch(urlAPI).then((res) => res.json()).then((data) => {
             let cuartosEspacio = []
             data.forEach((d) => {
-                if(String(d.homeId) === espacioSelec) {
+                if(String(d.homeId) === props.espacioSelecionado) {
                     cuartosEspacio.push(d)
                 }
             });
             setCuartos(cuartosEspacio);
         });
-    }, []);
+    }, [props.espacioSelecionado]);
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
     }

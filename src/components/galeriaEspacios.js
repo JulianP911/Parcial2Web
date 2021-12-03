@@ -30,7 +30,7 @@ function GalariaEspacios () {
                     )
                 })}
             </div>
-            {espacioSelec != null ? <GaleriaCuartos espacioSelecionado={espacioSelec.id} /> : null}
+            {espacioSelec != null ? <GaleriaCuartos espacioSelecionado={espacioSelec.id} />: null}
         </div>
     )
 }

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 function TablaDispositivos (props) {
-    let [dispositivos] = useState(props.dispositivosCuarto);
     return(
         <table className="table">
             <thead>
@@ -13,7 +12,7 @@ function TablaDispositivos (props) {
                 </tr>
             </thead>
             <tbody>
-                {dispositivos.map((d, index) => {
+                {props.dispositivosCuarto.map((d, index) => {
                     return(
                         <tr>
                             <th scope="row">{index}</th>
