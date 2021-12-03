@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 function TablaDispositivos (props) {
     let [dispositivos] = useState(props.dispositivosCuarto);
-    console.log(dispositivos);
     return(
         <table className="table">
             <thead>

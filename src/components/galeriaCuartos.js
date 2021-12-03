@@ -24,20 +24,26 @@ function GaleriaCuartos (props) {
         <div className="container mt-4 mb-5">
             <h1>My rooms</h1>
             <div className="row">
-                {cuartos.map((c) => {
-                    return(
-                        <div className="col-3">
-                            <div className="card" onClick={() => manejadorCuartoSelec(c)}>
-                                <div className="card-body">
-                                    <h5 className="card-title">{c.name}</h5>
+                <div className={cuartoSelec != null ? "col-8": ""}>
+                    <div className="row">
+                        {cuartos.map((c) => {
+                            return(
+                                <div className="col">
+                                    <div className="card" onClick={() => manejadorCuartoSelec(c)}>
+                                        <div className="card-body">
+                                            <h5 className="card-title">{c.name}</h5>
+                                        </div>
+                                        <img src={String(c.name).startsWith("Kitchen")? "https://e7.pngegg.com/pngimages/169/820/png-clipart-kitchen-sink-kitchen-miscellaneous-infographic.png": "https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-cartoon-hand-painted-family-living-room-png-image_481099.jpg"} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
+                                    </div>
                                 </div>
-                                <img src={String(c.name).startsWith("Kitchen")? "https://e7.pngegg.com/pngimages/169/820/png-clipart-kitchen-sink-kitchen-miscellaneous-infographic.png": "https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-cartoon-hand-painted-family-living-room-png-image_481099.jpg"} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
-                            </div>
-                        </div>
-                    )
-                })}
+                            )
+                        })}
+                    </div>
+                </div>
+                <div className={cuartoSelec != null ? "col-4": ""}>
+                    {cuartoSelec != null ? <TablaDispositivos dispositivosCuarto={cuartoSelec.devices} /> : null}
+                </div>
             </div>
-            {cuartoSelec != null ? <TablaDispositivos dispositivosCuarto={cuartoSelec.devices} /> : null}
         </div>
     )
 }
