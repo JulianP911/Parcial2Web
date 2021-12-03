@@ -4,10 +4,21 @@ import App from './App';
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
+// Importar componente de i18n y los archivos json en los idiomas espaniol-ingles
+import { IntlProvider } from 'react-intl';
+import localeEsMessages from "./locales/es";
+import localeEnMessages from "./locales/en";
+
+// Obtener el lenguaje definido en el navegador o el buscador
+let language = window.navigator.language || navigator.browserLanguage;
+
+// Definir el idioma de los mensajes a usar en la app i18n
+const selectMessages = language.startsWith('en') ? localeEnMessages : localeEsMessages;
+
 ReactDOM.render(
-  <React.StrictMode>
+  <IntlProvider locale={language} messages={selectMessages}>
     <App />
-  </React.StrictMode>,
+  </IntlProvider>,
   document.getElementById('root')
 );
 
