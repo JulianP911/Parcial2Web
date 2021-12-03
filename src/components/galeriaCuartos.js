@@ -19,6 +19,7 @@ function GaleriaCuartos (props) {
     }, []);
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
+        console.log(cuarto);
     }
     return(
         <div className="container mt-4 mb-5">
@@ -28,7 +29,7 @@ function GaleriaCuartos (props) {
                     <div className="row">
                         {cuartos.map((c) => {
                             return(
-                                <div className="col">
+                                <div className="col" key={c.name}>
                                     <div className="card" onClick={() => manejadorCuartoSelec(c)}>
                                         <div className="card-body">
                                             <h5 className="card-title">{c.name}</h5>

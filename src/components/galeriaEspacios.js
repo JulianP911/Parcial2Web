@@ -18,7 +18,7 @@ function GalariaEspacios () {
             <div className="row">
                 {espacios.map((e) => {
                     return(
-                        <div className="col-3">
+                        <div className="col-3" key={e.id}>
                             <div className="card" onClick={() => manejadorEspacioSelec(e)}>
                                 <img src={String(e.name).startsWith("Casa")? "https://images.emojiterra.com/google/android-10/512px/1f3e0.png": "https://static.vecteezy.com/system/resources/previews/002/714/106/non_2x/retro-house-flat-design-hometown-on-street-with-isolated-white-background-shop-house-modern-design-apartment-cartoon-vector.jpg"} className="card-img-top" alt={e.name} style={{height: "17rem"}}/>
                                 <div className="card-body">
