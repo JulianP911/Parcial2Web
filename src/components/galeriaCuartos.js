@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 import TablaDispositivos from "./tablaDispositivos";
+import FotoSala from "../assets/Sala.jpeg";
+import FotoComedor from "../assets/Comedor.jpeg";
+import FotoCocina from "../assets/Cocina.jpeg";
 
 function GaleriaCuartos (props) {
     let [cuartos, setCuartos] = useState([]);
@@ -19,10 +22,19 @@ function GaleriaCuartos (props) {
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
     }
+    function determinarImagenCuarto (cuarto) {
+        if(cuarto === "Living room") {
+            return FotoSala;
+        } else if(cuarto === "Kitchen") {
+            return FotoCocina;
+        } else if(cuarto === "Dinner room") {
+            return FotoComedor;
+        }
+    }
     return(
         <div className="container mt-4 mb-5">
             <h1>My rooms</h1>
-            <div className="row">
+            <div className="row mt-4">
                 <div className={cuartoSelec != null ? "col-8": ""}>
                     <div className="row">
                         {cuartos.map((c) => {
@@ -32,10 +44,10 @@ function GaleriaCuartos (props) {
                                         <div className="card-body">
                                             <h5 className="card-title">{c.name}</h5>
                                         </div>
-                                        <img src={String(c.name).startsWith("Kitchen")? "https://e7.pngegg.com/pngimages/169/820/png-clipart-kitchen-sink-kitchen-miscellaneous-infographic.png": "https://png.pngtree.com/png-vector/20190119/ourlarge/pngtree-cartoon-hand-painted-family-living-room-png-image_481099.jpg"} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
+                                        <img src={determinarImagenCuarto(String(c.name))} className="card-img-top" alt={c.name} style={{height: "14rem"}}/>
                                     </div>
                                 </div>
-                            )
+                            );
                         })}
                     </div>
                 </div>

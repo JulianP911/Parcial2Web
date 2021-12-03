@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import GaleriaCuartos from "./galeriaCuartos";
+import FotoCasa from "../assets/Casa.png";
+import FotoApartamento from "../assets/Apartamento.png"
 
 function GalariaEspacios () {
     let [espacios, setEspacios] = useState([]);
@@ -20,7 +22,7 @@ function GalariaEspacios () {
                     return(
                         <div className="col-3" key={e.id}>
                             <div className="card" onClick={() => manejadorEspacioSelec(e)}>
-                                <img src={String(e.name).startsWith("Casa")? "https://images.emojiterra.com/google/android-10/512px/1f3e0.png": "https://static.vecteezy.com/system/resources/previews/002/714/106/non_2x/retro-house-flat-design-hometown-on-street-with-isolated-white-background-shop-house-modern-design-apartment-cartoon-vector.jpg"} className="card-img-top" alt={e.name} style={{height: "17rem"}}/>
+                                <img src={String(e.name).startsWith("Casa")? FotoCasa : FotoApartamento} className="card-img-top" alt={e.name} style={{height: "15rem"}}/>
                                 <div className="card-body">
                                     <h5 className="card-title">{e.name}</h5>
                                     <p className="card-text">{e.address}</p>
