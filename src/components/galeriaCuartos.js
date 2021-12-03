@@ -19,7 +19,6 @@ function GaleriaCuartos (props) {
     }, []);
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
-        console.log(cuarto);
     }
     return(
         <div className="container mt-4 mb-5">
