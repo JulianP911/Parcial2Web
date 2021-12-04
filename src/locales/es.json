@@ -12,5 +12,8 @@
     "Casa Zipaquirá": "Casa Zipaquirá",
     "Apartamento Cartagena": "Apartamento Cartagena",
     "Apartamento Cali": "Apartamento Cali",
-    "Power usage (kwH) - Today": "Consumo de energía (kwH) - Hoy"
+    "Power usage (kwH) - Today": "Consumo de energía (kwH) - Hoy",
+    "on": "prendido",
+    "off": "apagado",
+    "open": "abierto"
 }

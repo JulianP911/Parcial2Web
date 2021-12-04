@@ -21,7 +21,7 @@ function TablaDispositivos (props) {
                             <th scope="row">{index}</th>
                             <td>{d.id !== undefined? d.id: "N/A"}</td>
                             <td>{d.name}</td>
-                            <td>{d.desired.value !== false? d.desired.value: "off"}</td>
+                            <td>{d.desired.value !== false && isNaN(d.desired.value.toString()) ? <FormattedMessage id={d.desired.value} />: isNaN(d.desired.value.toString())? <FormattedMessage id="off" />: d.desired.value}</td>
                         </tr>
                     );
                 })}    
