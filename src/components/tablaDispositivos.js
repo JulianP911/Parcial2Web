@@ -17,7 +17,7 @@ function TablaDispositivos (props) {
                     return(
                         <tr key={index}>
                             <th scope="row">{index}</th>
-                            <td>{d.id !== undefined? d.id: "NA"}</td>
+                            <td>{d.id !== undefined? d.id: "N/A"}</td>
                             <td>{d.name}</td>
                             <td>{d.desired.value !== false? d.desired.value: "off"}</td>
                         </tr>
