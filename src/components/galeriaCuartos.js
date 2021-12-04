@@ -3,6 +3,7 @@ import TablaDispositivos from "./tablaDispositivos";
 import FotoSala from "../assets/Sala.jpeg";
 import FotoComedor from "../assets/Comedor.jpeg";
 import FotoCocina from "../assets/Cocina.jpeg";
+import GraficoTorta from "./graficoTorta";
 import { FormattedMessage } from 'react-intl';
 
 function GaleriaCuartos (props) {
@@ -23,6 +24,7 @@ function GaleriaCuartos (props) {
                 localStorage.setItem("cuartos", JSON.stringify(cuartosEspacio));
             });
         }
+        setCuartoSelec();
     }, [props.espacioSelecionado]);
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
@@ -60,6 +62,7 @@ function GaleriaCuartos (props) {
                     {cuartoSelec != null ? <TablaDispositivos dispositivosCuarto={cuartoSelec.devices} /> : null}
                 </div>
             </div>
+            <GraficoTorta cuartosEspacio={cuartos} />
         </div>
     )
 }

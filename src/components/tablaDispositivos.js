@@ -15,17 +15,17 @@ function TablaDispositivos (props) {
             <tbody>
                 {props.dispositivosCuarto.map((d, index) => {
                     return(
-                        <tr>
+                        <tr key={index}>
                             <th scope="row">{index}</th>
-                            <td>{d.id}</td>
+                            <td>{d.id !== undefined? d.id: "NA"}</td>
                             <td>{d.name}</td>
                             <td>{d.desired.value !== false? d.desired.value: "off"}</td>
                         </tr>
-                    )
+                    );
                 })}    
             </tbody>
         </table>
-    )
+    );
 }
 
 export default TablaDispositivos;

@@ -1,14 +1,16 @@
 {
-    "MyEspaces": "Mis Espacios",
-    "MyRooms": "Mis Cuartos",
+    "MyEspaces": "Mis espacios",
+    "MyRooms": "Mis cuartos",
     "Id": "Identificación",
     "Device": "Dispositivo",
     "Value": "Valor",
+    "Stats": "Estadísiticas",
     "Kitchen": "Cocina",
     "Dinner room": "Comedor",
     "Living room": "Sala",
     "Casa Bogotá": "Casa Bogotá",
     "Casa Zipaquirá": "Casa Zipaquirá",
     "Apartamento Cartagena": "Apartamento Cartagena",
-    "Apartamento Cali": "Apartamento Cali"
+    "Apartamento Cali": "Apartamento Cali",
+    "Power usage (kwH) - Today": "Consumo de energía (kwH) - Hoy"
 }
