@@ -1,13 +1,17 @@
+// Importar componentes de react, GaleriaEspacios, FotoCasa, FotoApartamento y FormattedMessage
 import React, { useState, useEffect } from "react";
 import GaleriaCuartos from "./galeriaCuartos";
 import FotoCasa from "../assets/Casa.png";
 import FotoApartamento from "../assets/Apartamento.png";
 import { FormattedMessage } from 'react-intl';
 
+// Funcion GalariaEspacios
 function GalariaEspacios () {
+    // Variables de estado 
     let [espacios, setEspacios] = useState([]);
     let [espacioSelec, setEspacioSelec] = useState();
-    // let [cuartoSelec, setCuartoSelec] = useState();
+
+    // Hook de efecto para obtener la informacion del JSON que implementa PWA
     useEffect(() => {
         const urlAPI = "https://gist.githubusercontent.com/josejbocanegra/0067d2b28b009140fee423cfc84e40e6/raw/6e6b11160fbcacb56621b6422684d615dc3a0d33/spaces.json";
         if(!navigator.onLine) {
@@ -23,9 +27,12 @@ function GalariaEspacios () {
             });
         }
     }, [])
+
+    // Funcion que actualiza el estado de la variable espacioSelec para determinar el espacio escogido
     function manejadorEspacioSelec (espacio) {
         setEspacioSelec(espacio);
     }
+
     return(
         <div className="container mt-4">
             <div className="row">
@@ -40,7 +47,7 @@ function GalariaEspacios () {
                                 </div>
                             </div>
                         </div>
-                    )
+                    );
                 })}
             </div>
             {espacioSelec != null ? <GaleriaCuartos espacioSelecionado={espacioSelec.id} />: null}
@@ -48,4 +55,5 @@ function GalariaEspacios () {
     )
 }
 
+// Exportar GalariaEspacios para ser utilizado en archivos externos
 export default GalariaEspacios;
