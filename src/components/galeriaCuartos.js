@@ -6,16 +6,20 @@ import FotoCocina from "../assets/Cocina.jpeg";
 import GraficoTorta from "./graficoTorta";
 import { FormattedMessage } from 'react-intl';
 
+// Funcion GaleriaCuartos recibe props
 function GaleriaCuartos (props) {
+    // Variables de estado 
     let [cuartos, setCuartos] = useState([]);
     let [cuartoSelec, setCuartoSelec] = useState();
+
+    // Hook de efecto para obtener la informacion del JSON que implementa PWA
     useEffect(() => {
         const urlAPI = "https://gist.githubusercontent.com/josejbocanegra/92c90d5f2171739bd4a76d639f1271ea/raw/9effd124c825f7c2a7087d4a50fa4a91c5d34558/rooms.json";
         if(!navigator.onLine) {
             if(localStorage.getItem("cuartos") === null) {
                 setCuartos("Cargando cuartos...");
             } else {
-                setCuartos(JSON.parse(localStorage.getItem("cuartos")))
+                setCuartos(JSON.parse(localStorage.getItem("cuartos")));
             }
         } else {
             fetch(urlAPI).then((res) => res.json()).then((data) => {
@@ -26,9 +30,13 @@ function GaleriaCuartos (props) {
         }
         setCuartoSelec();
     }, [props.espacioSelecionado]);
+
+    // Funcion que actualiza el estado de la variable caurtoSelec para determinar el cuarto escogido
     function manejadorCuartoSelec (cuarto) {
         setCuartoSelec(cuarto);
     }
+
+    // Funcion que determina segun el cuarto que imagen mostrar
     function determinarImagenCuarto (cuarto) {
         if(cuarto === "Living room") {
             return FotoSala;
@@ -38,6 +46,7 @@ function GaleriaCuartos (props) {
             return FotoComedor;
         }
     }
+
     return(
         <div className="container mt-4 mb-5">
             <h1><FormattedMessage id="MyRooms"/></h1>
@@ -64,7 +73,8 @@ function GaleriaCuartos (props) {
             </div>
             <GraficoTorta cuartosEspacio={cuartos} />
         </div>
-    )
+    );
 }
 
+// Exportar GaleriaCuartos para ser utilizado en archivos externos
 export default GaleriaCuartos;

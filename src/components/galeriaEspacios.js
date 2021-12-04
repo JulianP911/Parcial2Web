@@ -52,7 +52,7 @@ function GalariaEspacios () {
             </div>
             {espacioSelec != null ? <GaleriaCuartos espacioSelecionado={espacioSelec.id} />: null}
         </div>
-    )
+    );
 }
 
 // Exportar GalariaEspacios para ser utilizado en archivos externos
