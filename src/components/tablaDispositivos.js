@@ -1,6 +1,8 @@
+// Importar componentes de react y FormattedMessage
 import React from "react";
 import { FormattedMessage } from 'react-intl';
 
+// Funcion TablaDispositivos recibe props
 function TablaDispositivos (props) {
     return(
         <table className="table">
@@ -28,4 +30,5 @@ function TablaDispositivos (props) {
     );
 }
 
+// Exportar TablaDispositivos para ser utilizado en archivos externos
 export default TablaDispositivos;

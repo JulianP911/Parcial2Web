@@ -1,3 +1,4 @@
+// Importar componentes de react, TablaDispositivos, FotoSala, FotoComedos, FotoCocina, GraficoTorta y FormattedMessage
 import React, { useState, useEffect } from "react";
 import TablaDispositivos from "./tablaDispositivos";
 import FotoSala from "../assets/Sala.jpeg";

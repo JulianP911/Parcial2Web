@@ -61,4 +61,5 @@ function GraficoTorta (props) {
     )
 }
 
+// Exportar GraficoTorta para ser utilizado en archivos externos
 export default GraficoTorta;
