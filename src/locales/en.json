@@ -15,5 +15,11 @@
     "Power usage (kwH) - Today": "Power usage (kwH) - Today",
     "on": "on",
     "off": "off",
-    "open": "open"
+    "open": "open",
+    "temperature": "temperature",
+    "light01": "light01",
+    "light1": "light1",
+    "door": "door",
+    "Gas": "Gas",
+    "humidity": "humidity"
 }

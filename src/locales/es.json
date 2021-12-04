@@ -15,5 +15,11 @@
     "Power usage (kwH) - Today": "Consumo de energía (kwH) - Hoy",
     "on": "prendido",
     "off": "apagado",
-    "open": "abierto"
+    "open": "abierto",
+    "temperature": "temperatura",
+    "light01": "luz01",
+    "light1": "luz1",
+    "door": "puerta",
+    "Gas": "Gas",
+    "humidity": "humedad"
 }
