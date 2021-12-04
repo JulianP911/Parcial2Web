@@ -49,6 +49,7 @@ function GraficoTorta (props) {
             .join("path")
             .attr("d", arco)
             .attr("fill", (data, index) => color(index))
+            .attr("stroke", "white")
             .on("mouseover", (event, data) => {
                 tooltip.style("visibility", 'visible')
                        .text(selectMessages[data.data.name] + ": " + data.value + " KwH");
